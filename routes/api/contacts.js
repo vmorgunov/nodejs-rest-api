@@ -10,12 +10,12 @@ const validationMiddleware = validation(contactSchema);
 
 router.get('/', ctrlWrapper(ctrl.getContacts));
 
-router.get('/:id', ctrlWrapper(ctrl.getContactById));
+router.get('/:contactId', ctrlWrapper(ctrl.getContactById));
 
 router.post('/', validationMiddleware, ctrlWrapper(ctrl.postContact));
 
-router.delete('/:id', ctrlWrapper(ctrl.removeContactById));
+router.delete('/:contactId', ctrlWrapper(ctrl.removeContactById));
 
-router.put('/:id', validationMiddleware, ctrlWrapper(ctrl.putContact));
+router.put('/:contactId', validationMiddleware, ctrlWrapper(ctrl.putContact));
 
 module.exports = router;
