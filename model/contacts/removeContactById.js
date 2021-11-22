@@ -3,11 +3,11 @@ const updateContacts = require('./updateContacts');
 
 const removeContact = async (contactId) => {
   const contacts = await listContacts();
-  const removeIndex = await contacts.findIndex((i) => i.id === contactId);
-  if (removeIndex === -1) {
+  const idx = await contacts.findIndex((i) => String(i.id) === contactId);
+  if (idx === -1) {
     return null;
   }
-  const removedContact = await contacts.splice(removeIndex, 1);
+  const removedContact = await contacts.splice(idx, 1);
   await updateContacts(contacts);
   return removedContact;
 };

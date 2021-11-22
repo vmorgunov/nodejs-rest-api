@@ -3,13 +3,13 @@ const updateContacts = require('./updateContacts');
 
 const updateContactsById = async (id, data) => {
   const contacts = await listContacts();
-  const removeIndex = contacts.findIndex((item) => item.id === id);
-  if (removeIndex === -1) {
+  const idx = contacts.findIndex((item) => String(item.id) === id);
+  if (idx === -1) {
     return null;
   }
-  contacts[removeIndex] = { id, ...data };
+  contacts[idx] = { id, ...data };
   await updateContacts(contacts);
-  return contacts[removeIndex];
+  return contacts[idx];
 };
 
 module.exports = updateContactsById;
