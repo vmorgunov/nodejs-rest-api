@@ -10,7 +10,7 @@ const removeContact = async (req, res) => {
 
   res.status(200).json({
     status: 'success',
-    message: 'Product deleted',
+    message: 'Contact deleted',
     data: {
       contact,
     },
