@@ -3,5 +3,5 @@ const auth = require('./auth');
 
 module.exports = {
   contactsController: contacts,
-  authContoller: auth,
+  authController: auth,
 };
