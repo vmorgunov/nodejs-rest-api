@@ -14,7 +14,7 @@ const signUp = async (req, res) => {
     message: 'User created',
     data: {
       user: {
-        newUser,
+        email,
       },
     },
   });
