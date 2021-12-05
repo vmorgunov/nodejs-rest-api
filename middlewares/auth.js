@@ -14,13 +14,13 @@ const auth = async (req, res, next) => {
     }
     const { id } = jwt.verify(token, SECRET_KEY);
     const user = await User.findById(id);
-    if (!user) {
+    if (!user || !user.token) {
       throw new Unauthorized('Not authorized');
     }
     req.user = user;
     next();
   } catch (error) {
-    if ((error.message = 'Invalid signature')) {
+    if ((error.message = 'Not authorized')) {
       error.status = 401;
     }
     next(error);
