@@ -5,6 +5,7 @@ require('dotenv').config({ path: './config/.env' });
 
 const contactsRouter = require('./routes/api/contactsRouter');
 const authRouter = require('./routes/api/authRouter');
+const usersRouter = require('./routes/api/usersRouter');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRouter);
+app.use('/api/users', usersRouter);
 app.use('/api/contacts', contactsRouter);
 
 app.use((req, res) => {
