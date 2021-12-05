@@ -5,6 +5,6 @@ const { auth, ctrlWrapper } = require('../../middlewares');
 const { usersController } = require('../../controllers');
 
 router.get('/current', auth, ctrlWrapper(usersController.getCurrent));
-router.patch('/:userId', ctrlWrapper(usersController.updateUser));
+router.patch('/:userId', ctrlWrapper(usersController.updateUserSubscription));
 
 module.exports = router;

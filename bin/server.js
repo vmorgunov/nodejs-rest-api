@@ -1,14 +1,16 @@
 const app = require('../app');
 const mongoose = require('mongoose');
+const colors = require('colors');
 
-const { DB_HOST, PORT = 3000 } = process.env;
+const { DB_HOST, PORT = 3000, DB_NAME } = process.env;
 
 mongoose
   .connect(DB_HOST)
   .then(() =>
     app.listen(PORT, () => {
-      console.log(`Database connection successful`);
-      console.log(`Server listening on port ${PORT}`);
+      console.log(`Database connection successful`.yellow.bold);
+      console.log(`Database name: ${DB_NAME}`.yellow.bold);
+      console.log(`Server listening on port: ${PORT}`.yellow.bold);
     })
   )
   .catch((error) => {

@@ -1,7 +1,7 @@
 const getCurrent = require('./getCurrent');
-const updateUser = require('./updateUser');
+const updateUserSubscription = require('./updateUserSubscription');
 
 module.exports = {
   getCurrent,
-  updateUser,
+  updateUserSubscription,
 };
