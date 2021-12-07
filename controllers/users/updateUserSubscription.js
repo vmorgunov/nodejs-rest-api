@@ -9,7 +9,6 @@ const updateUserSubscription = async (req, res) => {
     { subscription },
     {
       new: true,
-      runValidators: true,
     }
   );
   if (!user) {
