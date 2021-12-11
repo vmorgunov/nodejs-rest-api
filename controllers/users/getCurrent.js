@@ -1,6 +1,6 @@
 const { Users } = require('../../models');
 const getCurrent = async (req, res) => {
-  const { _id, email, subscription } = req.user;
+  const { _id, email, subscription, avatarURL } = req.user;
   res.status(200).json({
     status: 'success',
     data: {
@@ -8,6 +8,7 @@ const getCurrent = async (req, res) => {
         _id,
         email,
         subscription,
+        avatarURL,
       },
     },
   });
