@@ -5,7 +5,7 @@ const verifyEmail = async (req, res) => {
   const { verifyToken } = req.params;
   const user = await User.findOne({ verifyToken });
   if (!user) {
-    throw NotFound();
+    throw new NotFound();
   }
 
   await User.findByIdAndUpdate(user._id, {

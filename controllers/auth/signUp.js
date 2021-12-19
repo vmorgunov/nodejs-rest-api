@@ -1,6 +1,5 @@
 const { User } = require('../../models');
 const { Conflict } = require('http-errors');
-const bcrypt = require('bcryptjs');
 const gravatar = require('gravatar');
 const { sendEmail } = require('../../helpers');
 
@@ -34,6 +33,7 @@ const signup = async (req, res) => {
       user: {
         email,
         avatarURL,
+        verifyToken,
       },
     },
   });
