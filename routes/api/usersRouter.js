@@ -9,8 +9,10 @@ router.patch(
   '/avatars',
   auth,
   upload.single('avatar'),
-  ctrlWrapper(usersController.updateAvatar)
+  ctrlWrapper(usersController.updateAvatar),
 );
 router.patch('/:userId', ctrlWrapper(usersController.updateUserSubscription));
+router.get('/verify/:verifyToken', ctrlWrapper(usersController.verifyEmail));
+router.post('/verify', ctrlWrapper(usersController.reverification));
 
 module.exports = router;
